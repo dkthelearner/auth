@@ -10,8 +10,7 @@ import { TokenService } from './core/services';
 import { JwtPayload } from 'jsonwebtoken';
 
 @Controller()
-@UseGuards(JwtAuthGuard)
-@UseGuards(RolesGuard)
+@UseGuards(JwtAuthGuard, RolesGuard)
 export class AppController {
     constructor(private appService: AppService, private tokenService: TokenService) {}
 
